@@ -5,8 +5,8 @@ Content-Type: application/json
 
 {
     "nombre": "Carlos Daniel Rodriguez Castro",
-	"usuario": "soporte",
-	"password": "Hexastring",
+	"usuario": "soporte2",
+	"password": "Twoway00",
 	"nivelacceso": 1,
 	"email": "correo@twt.com.mx",
 	"sucursal": "Laredo",
@@ -17,10 +17,9 @@ Content-Type: application/json
 
 POST http://localhost:9000/api/v1/login/ HTTP/1.1
 Content-Type: application/json
-h
 
 {
-	"usuario": "soportes7",
+	"usuario": "soporte",
 	"password": "Hexastring"
 }
 
@@ -59,4 +58,212 @@ GET http://localhost:9000/api/v1/getCajonsByCajon/1 HTTP/1.1
 
 
 ###
-GET http://localhost:9000/api/v1/getCajons HTTP/1.1
+GET http://localhost:9000/api/v1/getIntercambios?limit=80 HTTP/1.1
+
+###
+POST http://localhost:9000/api/v1/postIntercambio HTTP/1.1
+Content-Type: application/json
+
+{	
+        "datos":{
+		"eos": "Entrada",
+		"fechaintercambio": "2022-12-31T12:24:00.092Z",
+		"movimiento": "Importacion",
+		"unidad": 3222,
+		"placasunidad": "Placas",
+		"tipoplacas": "SCTq",
+		"operador": "Nombre Operador",
+		"linea": "Linea Transp",
+		"cliente": "NombreCliente",
+		"origen": "Pack Worasld Wides",
+		"destino": "Nuevo Laredo",
+		"comentarios": "comentarios"
+	},
+	"trailer":{
+		"tipo":"Tipo Caja",
+		"numerotrailer": "Numero Caja",
+		"placastrailer": "Placas",
+		"estadoprocedencia": "Estado Procedencia",
+		"propietario": "Nombre Propietario caja",
+		"chasis": "Chasis",
+		"cajon": 1,
+		"bloqueado" : true,
+		"apto": false,
+		"cargado": true,
+		"sellos":"NumSellos"
+	},
+	"llantas": {
+		"posicion1":{
+			"marca":"1Msarca Llanta",
+			"estado": "1Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion2":{
+			"marca":"M2darca Llanta",
+			"estado": "2Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion3":{
+			"marca":"3Mqarca Llanta",
+			"estado": "3Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion4":{
+			"marca":"M4arca Llanta",
+			"estado": "4Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion5":{
+			"marca":"M5arca Llanta",
+			"estado": "5Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion6":{
+			"marca":"6Marca Llanta",
+			"estado": "6Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion7":{
+			"marca":"7Marca Llanta",
+			"estado": "7Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion8":{
+			"marca":"8Marca Llanta",
+			"estado": "8Estado llanta",
+			"profundidad": 1.0
+		}
+	},
+	"imagenes":{
+	    "frontalderecho":"1IMG Name",
+		"lateralderecho":"2IMG Name",
+		"puertas":"I3MG Name",
+		"sello":"I4MG Name",
+		"lateralizquierdo":"5IMG Name",
+		"frontalizquierdo":"6IMG Name",		
+		"llantaseje1":["algoa","aslgo"],		
+		"llantaseje2":["algo2","a1lgo2"],
+		"daños":["ImgName","ImgqName"]		
+	},
+	"accesorios":{
+		"lucestraseras":true,
+		"lucesfrente":true,
+		"luceslaterales":true,
+		"lucesreflejantes":true,
+		"manivela":true,
+		"patines":true,
+		"zoqueteras":true,
+		"estribo":true,
+		"lucesalto":true,
+		"luzplaca":true,
+		"gomas":true,
+		"coples":true,
+		"quintarueda":true,
+		"mangueras":true,
+		"lineasdeaire":true
+	}
+}
+
+###
+PUT http://localhost:9000/api/v1/updateIntercambio/1 HTTP/1.1
+Content-Type: application/json
+
+{	
+        "datos":{
+		"eos": "Entrada",
+		"fechaintercambio": "2017-05-11T09:18:54.092Z",
+		"movimiento": "Importacion",
+		"unidad": 319,
+		"placasunidad": "Placas",
+		"tipoplacas": "SCT",
+		"operador": "Nombre Operador",
+		"linea": "Linea Transp",
+		"cliente": "Nombre Cliente",
+		"origen": "Origen",
+		"destino": "Destino",
+		"comentarios": "comentarios"
+	},
+	"trailer":{
+		"tipo":"Tipo Caja",
+		"numerotrailer": "Numero Caja",
+		"placastrailer": "Placas",
+		"estadoprocedencia": "Estado Procedencia",
+		"propietario": "Nombre Propietario caja",
+		"chasis": "Chasis",
+		"cajon": 1,
+		"bloqueado" : true,
+		"apto": false,
+		"cargado": true,
+		"sellos":"NumSellos"
+	},
+	"llantas": {
+		"posicion1":{
+			"marca":"Marca Llanta",
+			"estado": "Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion2":{
+			"marca":"Marca Llantas",
+			"estado": "Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion3":{
+			"marca":"Marca Llanta",
+			"estado": "Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion4":{
+			"marca":"Marca Llanta",
+			"estado": "Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion5":{
+			"marca":"Marca Llanta",
+			"estado": "Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion6":{
+			"marca":"Marca Llanta",
+			"estado": "Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion7":{
+			"marca":"Marca Llanta",
+			"estado": "Estado llanta",
+			"profundidad": 1.0
+		},
+		"posicion8":{
+			"marca":"Marca Llanta",
+			"estado": "Estado llanta",
+			"profundidad": 1.0
+		}
+	},
+	"imagenes":{
+	    "frontalderecho":"IMG Name",
+		"lateralderecho":"IMG Name",
+		"puertas":"IMG Name",
+		"sello":"IMG Name",
+		"lateralizquierdo":"IMG Name",
+		"frontalizquierdo":"IMG Name",		
+		"llantaseje1":["algo","algo"],		
+		"llantaseje2":["algo2","algo2"],
+		"daños":["Img Name","Img Name2"]		
+	},
+	"accesorios":{
+		"lucestraseras":true,
+		"lucesfrente":true,
+		"luceslaterales":true,
+		"lucesreflejantes":true,
+		"manivela":true,
+		"patines":true,
+		"zoqueteras":true,
+		"estribo":true,
+		"lucesalto":true,
+		"luzplaca":true,
+		"gomas":true,
+		"coples":true,
+		"quintarueda":true,
+		"mangueras":true,
+		"lineasdeaire":true
+	}
+}

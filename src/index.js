@@ -4,6 +4,7 @@ require("dotenv").config();
 const authRoute = require('./v1/routes/authRoute')
 const operadorsRoutes = require('./v1/routes/operadorsRoute')
 const cajonsRoutes = require('./v1/routes/cajonsRoute')
+const intercambiosRoutes = require('./v1/routes/intercambiosRoute')
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use('/api/v1/login', authRoute)
 app.use('/api/v1', operadorsRoutes)
 app.use('/api/v1', cajonsRoutes)
+app.use('/api/v1', intercambiosRoutes)
 
 app.get('/', (req, res) => {
     res.send(`<h1> Welcome </h1>`)

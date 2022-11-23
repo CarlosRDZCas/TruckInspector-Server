@@ -1,33 +1,40 @@
 const cajonsSchema = require('../models/cajonsModel')
 
-const postCajons = (req, res) => {
+const postCajons = async (req, res) => {
     const cajon = cajonsSchema(req.body);
-    cajon.save()
-        .then((result) => {
-            res.json(result)
+    await cajon.save()
+        .then((cajon) => {
+            res.json({
+                ok: true,
+                cajon
+            })
         }).catch((err) => {
-            res.json(err)
+            res.status(400).json({
+                ok: false,
+                msg: 'Error al agregar el cajon'
+            })
         });
 }
 
-const getCajons = (req, res) => {
-    cajonsSchema.find().sort({fecha:-1})
-        .then((result) => {
-            res.json(result)
+const getCajons = async (req, res) => {
+    await cajonsSchema.find().sort({ fecha: -1 })
+        .then((cajon) => {
+            res.json({
+                ok: true,
+                cajon
+            })
         }).catch((err) => {
-            res.json(err)
+            res.status(400).json({ ok: false, msg: 'Error al buscar el cajon' })
         });
 }
 
-const getCajonsByCajon = (req, res) => {
+const getCajonsByCajon = async (req, res) => {
     const { cajon } = req.params
-    console.log('cajon :>> ', cajon);
-    cajonsSchema.findOne({ cajon }).sort({ fecha: -1 }).limit(1)
-        .then((result) => {
-            console.log('result :>> ', result);
-            res.json(result)
+    await cajonsSchema.findOne({ cajon }).sort({ fecha: -1 }).limit(1)
+        .then((cajon) => {
+            res.json({ ok: true, cajon })
         }).catch((err) => {
-            res.json(err)
+            res.status(400).json({ ok: false, msg: 'Error al buscar el cajon' })
         });
 }
 

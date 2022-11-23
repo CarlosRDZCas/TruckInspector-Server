@@ -1,33 +1,32 @@
 const operadorsSchema = require('../models/operadorsModel');
 
-const postOperadors = (req, res) => {
+const postOperadors = async (req, res) => {
     const operadors = operadorsSchema(req.body);
 
-    operadors.save()
-        .then((result) => {
-            res.json(result)
+    await operadors.save()
+        .then((operadors) => {
+            res.json({ ok: true, operadors })
         }).catch((err) => {
-            res.json(err)
+            res.json({ ok: false, msg: 'Error al agregar el operador' }).status(400)
         });
 }
 
-const getOperadors = (req, res) => {
-    operadorsSchema.find()
-        .then((result) => {
-            res.json(result)
+const getOperadors = async (req, res) => {
+    await operadorsSchema.find()
+        .then((operadors) => {
+            res.json({ ok: true, operadors })
         }).catch((err) => {
-            res.json(err)
+            res.json({ ok: false, msg: 'Error al buscar el operador' }).status(400)
         });
 }
 
-const getOperadorsByRFCandSCAC = (req, res) => {
+const getOperadorsByRFCandSCAC = async (req, res) => {
     const { rfc, scac } = req.params;
-
-    operadorsSchema.findOne({ rfc, scac })
-        .then((result) => {
-            res.json(result)
+    await operadorsSchema.findOne({ rfc, scac })
+        .then((operadors) => {
+            res.json({ ok: true, operadors })
         }).catch((err) => {
-            res.json(err)
+            res.json({ ok: false, msg: 'Error al buscar el operador ' }).status(400)
         });
 }
 
