@@ -8,7 +8,8 @@ const operadorsSchema = mongoose.Schema({
     },
     rfc: {
         type: String,
-        required: true
+        required: true,
+        unique:true
     },
     linea: {
         type: String,
@@ -17,7 +18,18 @@ const operadorsSchema = mongoose.Schema({
     scac: {
         type: String,
         required: true
+    },
+    image: {
+        type: String,
+        required:true      
     }
+});
+
+operadorsSchema.index({ rfc: 1, nombre: -1 });
+
+operadorsSchema.method('toJSON', function () {
+    const { __v, _id, ...object } = this.toObject();
+    return object;
 });
 
 module.exports = mongoose.model('operadors', operadorsSchema)

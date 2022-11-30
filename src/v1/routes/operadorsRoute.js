@@ -6,5 +6,6 @@ const router = express.Router();
 router.post('/postOperadors', operadorsController.postOperadors)
     .get('/getOperadors', operadorsController.getOperadors)
     .get('/getOperadorsByRFCandSCAC/:rfc/:scac', operadorsController.getOperadorsByRFCandSCAC)
+    .post('/postImageOperador', operadorsController.postImage)
 
 module.exports = router;
