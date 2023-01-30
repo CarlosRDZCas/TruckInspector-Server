@@ -94,13 +94,34 @@ Content-Type: application/json
 		"estadoprocedencia": "Estado Procedencia",
 		"propietario": "Nombre Propietario caja",
 		"chasis": "Chasis",
+		"fianza": "fianza",
 		"cajon": 1,
 		"bloqueado" : true,
 		"apto": false,
-		"cargado": true,
-		"sellos":"NumSellos"
+		"cargado": true		
 	},
-	"llantas": {
+	"frontalderecho":{
+		"imgfrontalderecho":"imagenfrontalder",
+		"daños":["danos1","danos2"],
+		"lucesfrente":true,
+		"lineasdeaire":false,
+		"mangueras":true,
+		"quintarueda":false,
+		"gomas":false,
+		"coples": true
+	},
+	"lateralderecho":{
+		"imglateralderecho":"imglateralderecho",
+		"daños":["danos1","danos2"],
+		"luceslaterales":true,
+		"lucesreflejantes":true,
+		"manivela":true,
+		"patines":false,
+		"zoqueteras":true,
+		"pisoremolque":false,
+		"exteriorchasis":false,
+		"imgllantaseje1":"imgllantaseje1",
+		"dañosllantaseje1":["danos1","danos2"],
 		"posicion1":{
 			"marca":"1Msarca Llanta",
 			"estado": "1Estado llanta",
@@ -110,7 +131,43 @@ Content-Type: application/json
 			"marca":"M2darca Llanta",
 			"estado": "2Estado llanta",
 			"profundidad": 1.0
+		},	
+		"posicion5":{
+			"marca":"M5arca Llanta",
+			"estado": "5Estado llanta",
+			"profundidad": 1.0
 		},
+		"posicion6":{
+			"marca":"6Marca Llanta",
+			"estado": "6Estado llanta",
+			"profundidad": 1.0
+		}	
+	},
+	"puerta":{
+		"imgpuertas":"imgpuertas",
+		"daños":["danos1","danos2"],
+		"lucestraseras":true,
+		"bisagras":true,
+		"ganchos":true,
+		"cerrojos":false,
+		"luzplaca":true,
+		"estribo":false,
+		"lucesalto": true,
+		"sello":true,
+		"imgsellos":["imgsello1","imgsello2"],
+		"numerosellos":["sello1","sello2"]
+	},
+	"lateralizquierdo":{
+		"imglateralizquierdo":"imglateralizquierdo",
+		"daños":["dano1","dano2"],
+		"luceslaterales":true,
+		"lucesreflejantes":true,
+		"patines":true,
+		"pisoremolque":true,
+		"zoqueteras":true,
+		"exteriorchasis":true,
+		"imgllantaseje2":"imgllantaseje2",
+		"dañosllantaseje2":["dano2","dano2"],
 		"posicion3":{
 			"marca":"3Mqarca Llanta",
 			"estado": "3Estado llanta",
@@ -121,16 +178,7 @@ Content-Type: application/json
 			"estado": "4Estado llanta",
 			"profundidad": 1.0
 		},
-		"posicion5":{
-			"marca":"M5arca Llanta",
-			"estado": "5Estado llanta",
-			"profundidad": 1.0
-		},
-		"posicion6":{
-			"marca":"6Marca Llanta",
-			"estado": "6Estado llanta",
-			"profundidad": 1.0
-		},
+	
 		"posicion7":{
 			"marca":"7Marca Llanta",
 			"estado": "7Estado llanta",
@@ -141,34 +189,6 @@ Content-Type: application/json
 			"estado": "8Estado llanta",
 			"profundidad": 1.0
 		}
-	},
-	"imagenes":{
-	    "frontalderecho":"1IMG Name",
-		"lateralderecho":"2IMG Name",
-		"puertas":"I3MG Name",
-		"sello":"I4MG Name",
-		"lateralizquierdo":"5IMG Name",
-		"frontalizquierdo":"6IMG Name",		
-		"llantaseje1":["algoa","aslgo"],		
-		"llantaseje2":["algo2","a1lgo2"],
-		"daños":["ImgName","ImgqName"]		
-	},
-	"accesorios":{
-		"lucestraseras":true,
-		"lucesfrente":true,
-		"luceslaterales":true,
-		"lucesreflejantes":true,
-		"manivela":true,
-		"patines":true,
-		"zoqueteras":true,
-		"estribo":true,
-		"lucesalto":true,
-		"luzplaca":true,
-		"gomas":true,
-		"coples":true,
-		"quintarueda":true,
-		"mangueras":true,
-		"lineasdeaire":true
 	}
 }
 

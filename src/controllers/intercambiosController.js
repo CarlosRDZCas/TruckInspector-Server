@@ -20,9 +20,10 @@ const postIntercambio = (req, res = response) => {
             const inter = await intercambiosSchema.find({
                 datos: intercambio.datos,
                 trailer: intercambio.trailer,
-                llantas: intercambio.llantas,
-                imagenes: intercambio.imagenes,
-                accesorios: intercambio.accesorios
+                frontalderecho: intercambio.frontalderecho,
+                lateralderecho: intercambio.lateralderecho,
+                puerta: intercambio.puerta,
+                lateralizquierdo: intercambio.lateralizquierdo,
             })
             if (inter.length > 0) {
                 return res.status(400).json({
@@ -35,9 +36,10 @@ const postIntercambio = (req, res = response) => {
                 "datos.folio": seqId,
                 datos: intercambio.datos,
                 trailer: intercambio.trailer,
-                llantas: intercambio.llantas,
-                imagenes: intercambio.imagenes,
-                accesorios: intercambio.accesorios
+                frontalderecho: intercambio.frontalderecho,
+                lateralderecho: intercambio.lateralderecho,
+                puerta: intercambio.puerta,
+                lateralizquierdo: intercambio.lateralizquierdo,
 
             });
             await newintercambio.save()
@@ -81,9 +83,10 @@ const updateIntercambio = async (req, res = response) => {
         {
             "datos": inter.datos,
             "trailer": inter.trailer,
-            "llantas": inter.llantas,
-            "imagenes": inter.imagenes,
-            "accesorios": inter.accesorios
+            "frontalderecho": inter.frontalderecho,
+            "lateralderecho": inter.lateralderecho,
+            "puerta": inter.puerta,
+            "lateralizquierdo": inter.lateralizquierdo
         }, { new: true })
         .then((intercambio) => {
             res.json({ ok: true, intercambio })

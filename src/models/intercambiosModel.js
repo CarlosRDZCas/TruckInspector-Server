@@ -57,7 +57,6 @@ const intercambiosSchema = mongoose.Schema({
             required: true
         }
     },
-
     trailer: {
         tipo: {
             type: String,
@@ -87,6 +86,10 @@ const intercambiosSchema = mongoose.Schema({
             type: Number,
             required: true
         },
+        fianza: {
+            type: String,
+            required: true
+        },
         bloqueado: {
             type: Boolean,
             required: true
@@ -98,13 +101,87 @@ const intercambiosSchema = mongoose.Schema({
         cargado: {
             type: Boolean,
             required: true
-        },
-        sellos: {
-            type: String,
-            required: true
         }
     },
-    llantas: {
+    frontalderecho: {
+        imgfrontalderecho: {
+            type: String,
+            required: true
+        },
+        daños: [{
+            type: String,
+            required: true
+        }],
+        lucesfrente: {
+            type: Boolean,
+            required: true
+        },
+        lineasdeaire: {
+            type: Boolean,
+            required: true
+        },
+        mangueras: {
+            type: Boolean,
+            required: true
+        },
+        quintarueda: {
+            type: Boolean,
+            required: true
+        },
+        gomas: {
+            type: Boolean,
+            required: true
+        },
+        coples: {
+            type: Boolean,
+            required: true
+        },
+    },
+    lateralderecho: {
+        imglateralderecho: {
+            type: String,
+            required: true
+        },
+        daños: [{
+            type: String,
+            required: true
+        }],
+        luceslaterales: {
+            type: Boolean,
+            required: true
+        },
+        lucesreflejantes: {
+            type: Boolean,
+            required: true
+        },
+        manivela: {
+            type: Boolean,
+            required: true
+        },
+        patines: {
+            type: Boolean,
+            required: true
+        },
+        zoqueteras: {
+            type: Boolean,
+            required: true
+        },
+        pisoremolque: {
+            type: Boolean,
+            required: true
+        },
+        exteriorchasis: {
+            type: Boolean,
+            required: true
+        },
+        imgllantaseje1: {
+            type: String,
+            required: true
+        },
+        dañosllantaseje1: [{
+            type: String,
+            required: true
+        }],
         posicion1: {
             marca: {
                 type: String,
@@ -120,34 +197,6 @@ const intercambiosSchema = mongoose.Schema({
             }
         },
         posicion2: {
-            marca: {
-                type: String,
-                required: true
-            },
-            estado: {
-                type: String,
-                required: true
-            },
-            profundidad: {
-                type: Number,
-                required: true
-            }
-        },
-        posicion3: {
-            marca: {
-                type: String,
-                required: true
-            },
-            estado: {
-                type: String,
-                required: true
-            },
-            profundidad: {
-                type: Number,
-                required: true
-            }
-        },
-        posicion4: {
             marca: {
                 type: String,
                 required: true
@@ -189,6 +238,126 @@ const intercambiosSchema = mongoose.Schema({
                 required: true
             }
         },
+    },
+    puerta: {
+        imgpuertas: {
+            type: String,
+            required: true
+        },
+        daños: [{
+            type: String,
+            required: true
+        }],
+        lucestraseras: {
+            type: Boolean,
+            required: true
+        },
+        bisagras: {
+            type: Boolean,
+            required: true
+        },
+        ganchos: {
+            type: Boolean,
+            required: true
+        },
+        cerrojos: {
+            type: Boolean,
+            required: true
+        },
+        luzplaca: {
+            type: Boolean,
+            required: true
+        },
+        estribo: {
+            type: Boolean,
+            required: true
+        },
+        lucesalto: {
+            type: Boolean,
+            required: true
+        },
+        sello: {
+            type: Boolean,
+            required: true
+        },
+        imgsellos: [{
+            type: String,
+            required: true
+        }],
+        numerosellos: [{
+            type: String,
+            required: true
+        }],
+    },
+    lateralizquierdo: {
+        imglateralizquierdo: {
+            type: String,
+            required: true
+        },
+        daños: [{
+            type: String,
+            required: true
+        }],
+        luceslaterales: {
+            type: Boolean,
+            required: true
+        },
+        lucesreflejantes: {
+            type: Boolean,
+            required: true
+        },
+        patines: {
+            type: Boolean,
+            required: true
+        },
+        pisoremolque: {
+            type: Boolean,
+            required: true
+        },
+        zoqueteras: {
+            type: Boolean,
+            required: true
+        },
+        exteriorchasis: {
+            type: Boolean,
+            required: true
+        },
+        imgllantaseje2: {
+            type: String,
+            required: true
+        },
+        dañosllantaseje2: [{
+            type: String,
+            required: true
+        }],
+        posicion3: {
+            marca: {
+                type: String,
+                required: true
+            },
+            estado: {
+                type: String,
+                required: true
+            },
+            profundidad: {
+                type: Number,
+                required: true
+            }
+        },
+        posicion4: {
+            marca: {
+                type: String,
+                required: true
+            },
+            estado: {
+                type: String,
+                required: true
+            },
+            profundidad: {
+                type: Number,
+                required: true
+            }
+        },
         posicion7: {
             marca: {
                 type: String,
@@ -216,111 +385,9 @@ const intercambiosSchema = mongoose.Schema({
                 type: Number,
                 required: true
             },
-        }
+        },
     },
-    imagenes: {
-        frontalderecho: {
-            type: String,
-            required: true
-        },
-        lateralderecho: {
-            type: String,
-            required: true
-        },
-        puertas: {
-            type: String,
-            required: true
-        },
-        sello: {
-            type: String,
-            required: true
-        },
-        lateralizquierdo: {
-            type: String,
-            required: true
-        },
-        frontalizquierdo: {
-            type: String,
-            required: true
-        },
-        llantaseje1: [{
-            type: String,
-            required: true
-        }],
-        llantaseje2: [{
-            type: String,
-            required: true
-        }],
-        daños: [{
-            type: String,
-            required: true
-        }]
-    },
-    accesorios: {
-        lucestraseras: {
-            type: Boolean,
-            required: true
-        },
-        lucesfrente: {
-            type: Boolean,
-            required: true
-        },
-        luceslaterales: {
-            type: Boolean,
-            required: true
-        },
-        lucesreflejantes: {
-            type: Boolean,
-            required: true
-        },
-        manivela: {
-            type: Boolean,
-            required: true
-        },
-        patines: {
-            type: Boolean,
-            required: true
-        },
-        zoqueteras: {
-            type: Boolean,
-            required: true
-        },
-        estribo: {
-            type: Boolean,
-            required: true
-        },
-        lucesalto: {
-            type: Boolean,
-            required: true
-        },
-        luzplaca: {
-            type: Boolean,
-            required: true
-        },
-        gomas: {
-            type: Boolean,
-            required: true
-        },
-        coples: {
-            type: Boolean,
-            required: true
-        },
-        quintarueda: {
-            type: Boolean,
-            required: true
-        },
-        mangueras: {
-            type: Boolean,
-            required: true
-        },
-        lineasdeaire: {
-            type: Boolean,
-            required: true
-        }
-    }
 });
-
-
 
 intercambiosSchema.method('toJSON', function () {
     const { __v, _id, ...object } = this.toObject();

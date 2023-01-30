@@ -27,7 +27,7 @@ app.use('/api/v1', cajonsRoutes)
 app.use('/api/v1', intercambiosRoutes)
 
 app.get('/', (req, res) => {
-    res.send(`<h1> Welcome </h1>`)
+    res.send(`<h1> API </h1>`)
 })
 
 mongoose.connect(process.env.MONGODB_URI, {
